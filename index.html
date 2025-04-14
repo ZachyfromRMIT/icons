@@ -7,8 +7,16 @@
     </head>
 
 
-    <Body style="background-color: aqua;">
+    <Body style="background-color: beige;">
+        <style>
+                .row{
+                    width: 720px
+                    margin
+                }
 
+
+
+        </style>
     <!-- <h1>
         My Title!
     </h1>
@@ -25,17 +33,33 @@
     <br>
     Here's a random image I took last class...
     </p> -->
-        <img id="donut1" src="donut_icons\donut_01.png" width="200" height="200"/>
-        <img id="donut2" src="donut_icons\donut_02.png" width="200" height="200"/>
-        <img id="donut3" src="donut_icons\donut_03.png" width="200" height="200"/>
+
+        <div class="row">
+            <img id="Linemain" src="4x\Linemain.png" onmouseover="this.src='4x/Linealt.png';" onmouseout="this.src='4x/Linemain.png'" width="200" height="200"/>
+            <img id="Graphmain" src="4x/Graphmain.png" onmouseover="this.src='4x/Graphalt.png';" onmouseout="this.src='4x/Graphmain.png'" width="200" height="200"/>
+            <img id="donut3" src="donut_icons\donut_03.png" width="200" height="200"/>
+        </div>
+
+        <div class="row">
+            <img id="Linemain" src="4x\Linemain.png" onmouseover="this.src='4x/Linealt.png';" onmouseout="this.src='4x/Linemain.png'" width="200" height="200"/>
+            <img id="Graphmain" src="4x/Graphmain.png" onmouseover="this.src='4x/Graphalt.png';" onmouseout="this.src='4x/Graphmain.png'" width="200" height="200"/>
+            <img id="donut3" src="donut_icons\donut_03.png" width="200" height="200"/>
+        </div>
+
+        <div class="row">
+            <img id="Linemain" src="4x\Linemain.png" onmouseover="this.src='4x/Linealt.png';" onmouseout="this.src='4x/Linemain.png'" width="200" height="200"/>
+            <img id="Graphmain" src="4x/Graphmain.png" onmouseover="this.src='4x/Graphalt.png';" onmouseout="this.src='4x/Graphmain.png'" width="200" height="200"/>
+            <img id="donut3" src="donut_icons\donut_03.png" width="200" height="200"/>
+        </div>
+
 
         <script>
-            var sound1 = new buzz.sound("glitchSoundClips/glitch1.mp3");
+            var sound1 = new buzz.sound("Sounds/ElevatorBellDing_S08OF.189.wav");
             var sound2 = new buzz.sound("glitchSoundClips/glitch2.mp3");
             var sound3 = new buzz.sound("glitchSoundClips/glitch3.mp3");
 
             window.onload = function() {
-                document.getElementById('donut1').addEventListener('mouseover', function () {sound1.play();});
+                document.getElementById('Linemain').addEventListener('mouseover', function () {sound1.play();});
                 document.getElementById('donut2').addEventListener('mouseover', function () {sound2.play();});
                 document.getElementById('donut3').addEventListener('mouseover', function () {sound3.play();});
             };
