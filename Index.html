@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>
+            Hello World!
+        </title>      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.1/buzz.min.js"></script>  
+    </head>
+
+
+    <Body style="background-color: aqua;">
+
+    <!-- <h1>
+        My Title!
+    </h1>
+
+    <h2>
+    My Subheading
+    </h2>
+
+    <p>
+    Here comes the break
+    <br>
+    NO MORE PEN TOOL!
+    <br>
+    <br>
+    Here's a random image I took last class...
+    </p> -->
+        <img id="donut1" src="donut_icons\donut_01.png" width="200" height="200"/>
+        <img id="donut2" src="donut_icons\donut_02.png" width="200" height="200"/>
+        <img id="donut3" src="donut_icons\donut_03.png" width="200" height="200"/>
+
+        <script>
+            var sound1 = new buzz.sound("glitchSoundClips/glitch1.mp3");
+            var sound2 = new buzz.sound("glitchSoundClips/glitch2.mp3");
+            var sound3 = new buzz.sound("glitchSoundClips/glitch3.mp3");
+
+            window.onload = function() {
+                document.getElementById('donut1').addEventListener('mouseover', function () {sound1.play();});
+                document.getElementById('donut2').addEventListener('mouseover', function () {sound2.play();});
+                document.getElementById('donut3').addEventListener('mouseover', function () {sound3.play();});
+            };
+        </script>
+    </Body>
+</html>
