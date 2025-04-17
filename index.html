@@ -4,65 +4,106 @@
             Hello World!
         </title>      
         <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.1/buzz.min.js"></script>  
+        <style>
+            .row {
+                display: flex;
+                justify-content: center;
+                gap: 20px; 
+                margin: 20px 0; 
+            }
+        
+            .row img {
+                max-width: 200px; 
+                max-height: 200px; 
+                object-fit: contain;
+            }
+        </style>
     </head>
 
-
-    <Body style="background-color: beige;">
-        <style>
-                .row{
-                    width: 720px
-                    margin
-                }
-
-
-
-        </style>
-    <!-- <h1>
-        My Title!
-    </h1>
-
-    <h2>
-    My Subheading
-    </h2>
-
-    <p>
-    Here comes the break
-    <br>
-    NO MORE PEN TOOL!
-    <br>
-    <br>
-    Here's a random image I took last class...
-    </p> -->
-
+    <body style="background-color: rgb(118, 118, 111);">
         <div class="row">
-            <img id="Linemain" src="4x\Linemain.png" onmouseover="this.src='4x/Linealt.png';" onmouseout="this.src='4x/Linemain.png'" width="200" height="200"/>
-            <img id="Graphmain" src="4x/Graphmain.png" onmouseover="this.src='4x/Graphalt.png';" onmouseout="this.src='4x/Graphmain.png'" width="200" height="200"/>
-            <img id="donut3" src="donut_icons\donut_03.png" width="200" height="200"/>
+            <img id="Graph" src="4x/Graph.png" onmouseover="this.src='4x/Graphalt.png'; playGraphSound();" onmouseout="this.src='4x/Graph.png'" />
+            <img id="ArrowGraph" src="4x/arrowgraph.png" onmouseover="this.src='4x/arrowgraphalt.png'; playArrowGraphSound();" onmouseout="this.src='4x/arrowgraph.png'" />
+            <img id="Man" src="4x/man.png" onmouseover="this.src='4x/manalt.png'; playManSound();" onmouseout="this.src='4x/man.png'" />
         </div>
-
+        
         <div class="row">
-            <img id="Linemain" src="4x\Linemain.png" onmouseover="this.src='4x/Linealt.png';" onmouseout="this.src='4x/Linemain.png'" width="200" height="200"/>
-            <img id="Graphmain" src="4x/Graphmain.png" onmouseover="this.src='4x/Graphalt.png';" onmouseout="this.src='4x/Graphmain.png'" width="200" height="200"/>
-            <img id="donut3" src="donut_icons\donut_03.png" width="200" height="200"/>
+            <img id="Money" src="4x/Money.png" onmouseover="this.src='4x/moneyalt.png'; playMoneySound();" onmouseout="this.src='4x/Money.png'" />
+            <img id="Pie" src="4x/Pie.png" onmouseover="this.src='4x/Piealt.png'; playPieSound();" onmouseout="this.src='4x/Pie.png'" />
+            <img id="Rocket" src="4x/rocket.png" onmouseover="this.src='4x/rocketalt.png'; playRocketSound();" onmouseout="this.src='4x/rocket.png'" />
         </div>
-
+        
         <div class="row">
-            <img id="Linemain" src="4x\Linemain.png" onmouseover="this.src='4x/Linealt.png';" onmouseout="this.src='4x/Linemain.png'" width="200" height="200"/>
-            <img id="Graphmain" src="4x/Graphmain.png" onmouseover="this.src='4x/Graphalt.png';" onmouseout="this.src='4x/Graphmain.png'" width="200" height="200"/>
-            <img id="donut3" src="donut_icons\donut_03.png" width="200" height="200"/>
+            <img id="Up" src="4x/Up.png" onmouseover="this.src='4x/Upalt.png'; playUpSound();" onmouseout="this.src='4x/Up.png'" />
+            <img id="Walking" src="4x/Walking.png" onmouseover="this.src='4x/walkingalt.png'; playWalkingSound();" onmouseout="this.src='4x/Walking.png'" />
+            <img id="Cluster" src="4x/cluster.png" onmouseover="this.src='4x/clusteralt.png'; playClusterSound();" onmouseout="this.src='4x/cluster.png'" />
         </div>
-
 
         <script>
-            var sound1 = new buzz.sound("Sounds/ElevatorBellDing_S08OF.189.wav");
-            var sound2 = new buzz.sound("glitchSoundClips/glitch2.mp3");
-            var sound3 = new buzz.sound("glitchSoundClips/glitch3.mp3");
+            // Create sound objects for all 9 sounds
+            var graphSound = new buzz.sound("Sounds/Graphsound.wav");
+            var arrowGraphSound = new buzz.sound("Sounds/arrowgraphsoundeffect.mp3");
+            var manSound = new buzz.sound("Sounds/mansoundeffect.wav");
+            var moneySound = new buzz.sound("Sounds/moneysoundeffect.mp3");
+            var pieSound = new buzz.sound("Sounds/piesound.wav");
+            var rocketSound = new buzz.sound("Sounds/rocketsoundeffect.mp3");
+            var upSound = new buzz.sound("Sounds/upsound.wav");
+            var walkingSound = new buzz.sound("Sounds/walkingsoundeffect.wav");
+            var clusterSound = new buzz.sound("Sounds/clustersound.wav");
+
+            // Functions to play sounds
+            function playGraphSound() {
+                graphSound.play();
+            }
+
+            function playArrowGraphSound() {
+                arrowGraphSound.play();
+            }
+
+            function playManSound() {
+                manSound.play();
+            }
+
+            function playMoneySound() {
+                moneySound.play();
+            }
+
+            function playPieSound() {
+                pieSound.play();
+            }
+
+            function playRocketSound() {
+                rocketSound.play();
+            }
+
+            function playUpSound() {
+                upSound.play();
+            }
+
+            function playWalkingSound() {
+        walkingSound.play();
+        // Stop the sound after 3 seconds
+        setTimeout(function () {
+            walkingSound.stop();
+        }, 2500);
+      }
+
+            function playClusterSound() {
+                clusterSound.play();
+            }
 
             window.onload = function() {
-                document.getElementById('Linemain').addEventListener('mouseover', function () {sound1.play();});
-                document.getElementById('donut2').addEventListener('mouseover', function () {sound2.play();});
-                document.getElementById('donut3').addEventListener('mouseover', function () {sound3.play();});
+                // Ensure all event listeners are properly attached
+                document.getElementById("Graph").addEventListener("mouseover", playGraphSound);
+                document.getElementById("ArrowGraph").addEventListener("mouseover", playArrowGraphSound);
+                document.getElementById("Man").addEventListener("mouseover", playManSound);
+                document.getElementById("Money").addEventListener("mouseover", playMoneySound);
+                document.getElementById("Pie").addEventListener("mouseover", playPieSound);
+                document.getElementById("Rocket").addEventListener("mouseover", playRocketSound);
+                document.getElementById("Up").addEventListener("mouseover", playUpSound);
+                document.getElementById("Walking").addEventListener("mouseover", playWalkingSound);
+                document.getElementById("Cluster").addEventListener("mouseover", playClusterSound);
             };
         </script>
-    </Body>
+    </body>
 </html>
